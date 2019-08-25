@@ -1,13 +1,115 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<!-- <view style='background-color:{{ grade }};color:#eee' class='box'>
+  <view class='city'>
+    <navigator url="../city/city">
+      <text class="cu-tag line-white round">
+      <text class="cuIcon-location{{bool}} lg text-green"></text> {{city}}
+      </text>
+    </navigator>
+  </view> -->
+<!-- <view style='position: absolute;left:310rpx;top:120rpx;'>人人道科技</view> -->
+<!-- <view class='main zero'>
+    <text class='out'>{{aqi}}</text>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class='title'>
+    <text class="cu-tag line-{{grade}} round">当前空气质量</text>
   </view>
 </view>
+
+<view class="flex">
+  <view class="flex-sub bg-white padding-sm margin-xs radius aqi">
+    <view>
+      <text class='apii'>PM<text style='font-size:15rpx'>2.5</text></text>
+    </view>
+    <view style='margin-top:20rpx;' class="cu-tag line-grey radius">{{pm}} μg/m³</view>
+  </view>
+  <view style='border-left: 1rpx solid #888;height:120rpx;margin-top:20rpx;'></view> -->
+<!--分割线-->
+<!-- <view class="flex-sub bg-white padding-sm margin-xs radius aqi">
+    <view>
+      <text class='apii'>空气质量</text>
+    </view>
+    <view style='margin-top:20rpx;' class="cu-tag line-grey radius">{{zhiliang}}</view>
+  </view>
+</view>
+
+<button class="cu-btn block line-grey lg top" style='height:150rpx;font-size:35rpx;' bindtap='top'>
+  <text class="cuIcon-newshot" style='margin-right:40rpx;font-size:60rpx;'>
+  </text> 全国空气质量排名</button> -->
+<view style='box-shadow: 0rpx 10rpx 50rpx 10rpx rgba(85, 85, 85, 0.10);'>
+  <image src='../../img/head.png' style='width:100%;height:416rpx' mode='widthFix'></image>
+</view>
+<view style='position:relative;'>
+  <image src='../../img/2.png' style='width:100%;height:416rpx' mode='widthFix'></image>
+  <view style='text-align: center;font-size: 50rpx;color: red;font-weight: 800;position:absolute;top:220rpx;left:300rpx;'>
+    <navigator url="../city/city">
+      <text>{{city}}</text>
+    </navigator>
+  </view>
+  <view style='font-size:80rpx;font-weight:700'>
+    <view style='color:red;text-align:center;position:absolute;top:430rpx;left:160rpx;'>
+      <text>{{pm}}</text>
+    </view>
+    <view style='color:red;text-align:center;position:absolute;top:430rpx;left:470rpx;'>
+      <text>{{aqi||'...'}}</text>
+    </view>
+  </view>
+</view>
+
+
+<view style='border-radius:50rpx;background-color:rgb(135, 187, 84);color:red;margin:0rpx 80rpx 0rpx;font-size:60rpx;font-weight:800'>
+  <text style='color:white;margin:0rpx 40rpx 0rpx 120rpx ;font-size:40rpx'>污染等级:</text>
+  <text>  {{ zhiliang||'...' }}</text>
+</view>
+<view style='padding:20rpx;border:solid 6rpx rgb(91, 149, 72);width:80%;margin: 20rpx auto 0rpx;font-weight:800'>
+  <text>温馨提示:\n</text>
+  <text>{{ wxts }}</text>
+</view>
+
+
+
+<view style='margin:15rpx 40rpx 15rpx;'>
+  <button class="cu-btn block bg-green lg round" style='background-color:rgb(135, 187, 84)' bindtap='show'>
+    <text class="cuIcon-shop" style='font-size:50rpx;margin-right:30rpx'></text>
+    <text style='font-weight:800;font-size:40rpx'>点此购买防雾霾产品</text>
+  </button>
+</view>
+<view style='margin:0rpx 40rpx 0rpx;'>
+  <button class="cu-btn block bg-green lg round" style='background-color:rgb(135, 187, 84)' bindtap='top'>
+    <text class="cuIcon-list" style='font-size:50rpx;margin-right:30rpx'></text>
+    <text style='font-weight:800;font-size:40rpx'>全国城市空气质量排名</text>
+  </button>
+</view>
+<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white">
+      <view class="action text-grey" data-type='0' bindtap="hideModal">取消</view>
+      <view class="action text-green" data-type='1' bindtap="hideModal">确定</view>
+    </view>
+    <view class="padding-xl">
+      定位失败,是否手动选择城市?
+    </view>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">Modal标题</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      Modal 内容。
+    </view>
+  </view>
+</view>
+<!-- <view class="cu-form-group">
+  <view class="title">地址选择</view>
+  <picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      {{region[0]}}，{{region[1]}}
+    </view>
+  </picker>
+</view> -->

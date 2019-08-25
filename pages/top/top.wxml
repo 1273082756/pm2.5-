@@ -1,0 +1,47 @@
+<!--pages/top/top.wxml-->
+<view class='history-table-wrap'>
+  <view class="table">
+    <view class="tr">
+      <view class="th th1">城市</view>
+      <view class="th th2">PM2.5</view>
+      <view class="th th2">AQI</view>
+      <view class="th th2">污染情况</view>
+    </view>
+    <view class="tr" wx:for="{{dataList}}" wx:key>
+      <view class="td td1">{{ item.city }}</view>
+      <view class="td td2">{{ item.pm25 }}</view>
+      <view class="td td2">{{ item.AQI }}</view>
+
+      <view class="td td2" wx:if='{{ item.content=="优" }}'>
+        <view class=" cu-tag line-green radius" style='color:rgb(0,155,76);border:solid 3rpx rgb(0,155,76)'>
+          <text style='font-size:30rpx;width:120rpx'>    {{ item.content }}    </text>
+        </view>
+      </view>
+      <view class="td td2" wx:elif='{{ item.content=="良" }}'>
+        <view class=" cu-tag line-orange radius" style='color:rgb(255,240,0);border:solid 3rpx rgb(255,240,0)'>
+          <text style='font-size:30rpx;width:120rpx'>    {{ item.content }}好    </text>
+        </view>
+      </view>
+      <view class="td td2" wx:elif='{{ item.content=="轻度污染" }}'>
+        <view class=" cu-tag line-yellow radius" style='color:rgb(240,133,25);border:solid 3rpx rgb(240,133,25)'>
+          <text style='font-size:30rpx;'>    {{ item.content }}    </text>
+        </view>
+      </view>
+      <view class="td td2" wx:elif='{{ item.content=="中度污染" }}'>
+        <view class=" cu-tag line-mauve radius" style='color:rgb(230,33,41);border:solid 3rpx rgb(230,33,41)'>
+          <text style='font-size:30rpx;'>    {{ item.content }}    </text>
+        </view>
+      </view>
+      <view class="td td2" wx:elif='{{ item.content=="重度污染" }}'>
+        <view class=" cu-tag line-grey radius"  style='color:rgb(176,75,135);border:solid 3rpx rgb(176,75,135)'>
+          <text style='font-size:30rpx;'>    {{ item.content }}    </text>
+        </view>
+      </view>
+      <view class="td td2" wx:elif='{{ item.content=="严重污染" }}'>
+        <view class=" cu-tag line-grey radius" style='color:rgb(138,46,56);border:solid 3rpx rgb(138,46,56)'>
+          <text style='font-size:30rpx;'>    {{ item.content }}    </text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

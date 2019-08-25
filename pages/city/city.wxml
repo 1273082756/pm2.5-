@@ -1,0 +1,57 @@
+<view class='cu-form-group' style='height:20rpx;background-color:#eee;border-radius: 50rpx;margin-left:70rpx;margin-right:70rpx;'>
+  <input placeholder="请输入城市" bindinput='watchPassWord'></input>
+  <text class="cuIcon-search text-blue" ></text>
+</view>
+
+
+<view wx:if='{{ search=="" }}'>
+  <view class="cu-bar bg-white">
+    <view class="action">
+      <text class="cuIcon-title text-blue"></text>热门城市
+    </view>
+  </view>
+  <view class="padding flex flex-wrap" style='margin-left:40rpx;'>
+    <view class="padding-xs" wx:for="{{CityList}}" wx:key>
+      <view class="cu-tag line-grey radius">
+        <text style='font-size:30rpx;' data-city='{{item}}' bindtap='jump'>{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view wx:for="{{CityList2}}">
+    <view class=" bg-white">
+      <view class="action">
+        <text class="cuIcon-title text-blue"></text>{{item.province}}
+      </view>
+    </view>
+    <view class="padding flex flex-wrap" style='margin-left:40rpx;'>
+      <view class="padding-xs" wx:for="{{item.list}}" wx:key>
+        <view class="cu-tag line-grey radius" data-city='{{item}}'>
+          <text style='font-size:30rpx;' data-city='{{item}}' bindtap='jump'>{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else>
+
+  <view class=" bg-white">
+    <view class="action">
+      <text class="cuIcon-title text-blue"></text>搜索结果
+    </view>
+  </view>
+  <view class="padding flex flex-wrap" style='margin-left:40rpx;'>
+    <view class="padding-xs" wx:for="{{searchList}}" wx:key>
+      <view class="cu-tag line-grey radius" >
+        <text style='font-size:30rpx;' data-city='{{item}}' bindtap='jump'>{{item}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- <view wx:for="{{searchList}}">
+    <view class="padding flex flex-wrap">
+      <view class="cu-tag line-grey radius" data-city='{{item}}'>
+        <text style='font-size:30rpx;'>{{item}}</text>
+      </view>
+    </view>
+  </view> -->
+</view>

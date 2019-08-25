@@ -1,21 +1,118 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* 
+.box {
+  border-bottom-left-radius: 750rpx;
+  border-bottom-right-radius: 750rpx;
+  height: 600rpx;
+  box-shadow: 0px 4px 12px #888;
+  margin-bottom: 10rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
+.main {
+  text-align: center;
+  font-size: 150rpx;
+  font-weight: 800;
+}
+
+.out {
+  margin-top: 60rpx;
+  color: #eee;
+}
+
+.city {
+  text-align: center;
+  margin-top: 0rpx;
+  font-size: 50rpx;
+  color: red;
+  font-weight: 800;
+}
+
+.title {
+  text-align: center;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+
+.t1 {
+  font-size: 30rpx;
+  font-weight: 800;
   margin: 20rpx;
-  border-radius: 50%;
+  width: 200rpx;
+  border-radius: 20rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.aqi {
+  width: 50rpx;
+  text-align: center;
+  margin-top: 10rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.aqii {
+  font-weight: 800;
+  font-size: 30rpx;
+}
+
+.top {
+  margin: 50rpx auto;
+  height: 250rpx;
+  width: 600rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 20rpx;
+}
+
+.logo {
+  margin: 30rpx;
+}
+
+.ta {
+  margin: 10rpx;
+  height: 70rpx;
+  width: 400rpx;
+}
+
+.th {
+  background-color: rgb(109, 158, 221);
+  color: white;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 20rpx;
+}
+
+.thd {
+  display: initial;
+  margin: 50rpx;
+}
+
+.td {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.tdd {
+  display: initial;
+  margin: 60rpx;
+}
+
+.zero {
+  width: 280rpx;
+  height: 280rpx;
+  margin: 50rpx auto;
+  border-style: dashed;
+  border-width: 3rpx;
+  border-radius: 300rpx;
+  text-align: center;
+  line-height: 280rpx;
+}
+
+.top {
+  font-size: 60rpx;
+  padding: 30rpx;
+  border: 5rpx solid #999;
+} */
+
+page {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  
 }
