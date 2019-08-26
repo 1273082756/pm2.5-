@@ -1,4 +1,15 @@
 <!--pages/top/top.wxml-->
+<view class="tr" wx:for="{{dataList}}" wx:key>
+  <view style="background-color:rgb(123, 179, 69);color:#fff;width:85%;margin:20rpx auto;display:flex;box-shadow: 0 0 5px 1px #999;border-radius: 25rpx;">
+    <view style="text-align:center;font-size:55rpx;margin:30rpx 50rpx 30rpx 30rpx;width:200rpx">{{ item.city }}</view>
+    <view style="text-align:center">
+      <view style="margin:30rpx;">pm2.5:{{ item.pm25 }}</view>
+      <view style="margin:30rpx;">AQI:{{ item.AQI }}</view>
+    </view>
+    <view style="margin:30rpx;font-size:33rpx;">{{ item.content }}</view>
+  </view>
+</view>
+<!-- 
 <view class='history-table-wrap'>
   <view class="table">
     <view class="tr">
@@ -33,7 +44,7 @@
         </view>
       </view>
       <view class="td td2" wx:elif='{{ item.content=="重度污染" }}'>
-        <view class=" cu-tag line-grey radius"  style='color:rgb(176,75,135);border:solid 3rpx rgb(176,75,135)'>
+        <view class=" cu-tag line-grey radius" style='color:rgb(176,75,135);border:solid 3rpx rgb(176,75,135)'>
           <text style='font-size:30rpx;'>    {{ item.content }}    </text>
         </view>
       </view>
@@ -44,4 +55,4 @@
       </view>
     </view>
   </view>
-</view>
+</view> -->
